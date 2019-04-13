@@ -18,7 +18,6 @@ x_train, x_test = x_train / 255.0, x_test / 255.0
 # input_shape=(28,28) in Flatten() is sent to Layer class defined in tensorflow/python/keras/engine/base_layer.py
 # Dense(units,activation=None,...)  defined in tensorflow/python/keras/layers/core.py
 # Dropout(rate,...)  defined in tensorflow/python/keras/layers/core.py
-
 model = tf.keras.models.Sequential([
   tf.keras.layers.Flatten(input_shape=(28, 28)),
   tf.keras.layers.Dense(128, activation='relu'),
@@ -36,7 +35,7 @@ model = tf.keras.models.Sequential([
 # 		adamax = Adamax
 # 		nadam = Nadam
 # For the loss, refer to tensorflow/python/keras/losses.py
-# ex) MeanSquaredError can be chose by loss='mean_squared_error' in the argument.
+# ex) MeanSquaredError can be chosen by loss='mean_squared_error' in the argument.
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
